@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <h1>Welcome to WhiteBoard!</h1>
+  <h2>Courses {{courses.length}}</h2>
+
+  <ul class="list-group">
+    <li (click)="selectCourse(course)"
+        [ngClass]="{'active' : course.id === selectedCourse.id}"
+        *ngFor="let course of courses"
+        class="list-group-item">
+      {{course.title}} - {{course.id}}
+    </li>
+  </ul>
+
+  <h2>Modules</h2>
+  <ul class="list-group">
+    <li *ngFor = "let module of selectedCourse.modules"
+        class="list-group-item">
+      {{module.title}}
+
+    </li>
+  </ul>
+
+  {{selectedCourse.title}} {{selectedCourse.modules.length}}
+
+</div>
