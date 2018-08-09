@@ -6,12 +6,18 @@ import { WhiteBoardComponent } from './white-board/white-board.component';
 import {CourseServiceClient} from './services/course.service.client';
 import { CourseNavigatorComponent } from './course-navigator/course-navigator.component';
 import { routing } from './app.routing';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WhiteBoardComponent,
-    CourseNavigatorComponent
+    CourseNavigatorComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
