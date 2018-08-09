@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CourseServiceClient} from '../services/course.service.client';
+import {CourseNavigatorServiceClient} from '../services/course-navigator.service.client';
 
 @Component({
   selector: 'app-course-navigator',
@@ -9,13 +9,17 @@ import {CourseServiceClient} from '../services/course.service.client';
 export class CourseNavigatorComponent implements OnInit {
 
   courses = [];
+  modules = [];
   selectedCourse = {};
   selectedModule = {};
 
-  constructor(private courseServiceClient: CourseServiceClient) { }
+  constructor(private service: CourseNavigatorServiceClient) { }
 
   selectCourse(course) {
     this.selectedCourse = course;
+    this.service
+      .findAllModulesForGivenCourse(course.id)
+      .then(modules => this.modules = modules);
     this.selectedModule = {};
   }
 
@@ -24,7 +28,7 @@ export class CourseNavigatorComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.courseServiceClient
+    this.service
       .findAllCourses()
       .then(courses => this.courses = courses);
   }
