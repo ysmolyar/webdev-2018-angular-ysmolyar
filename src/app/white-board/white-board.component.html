@@ -10,22 +10,22 @@
       <div class="col col-sm-2">
       <a href="/home" class="homeLink">Home</a>
       </div>
-      <div class="col col-sm-6">
+      <div class="col col-sm-5">
       </div>
 
-      <span class="col col-sm-auto">
+      <div class="col col-sm-auto float-right">
        <button routerLink="/profile"
                class="btn btn-light profileBtn">Profile</button>
       <button (click)="logout()"
               class="btn btn-danger">Log Out</button>
-  </span>
+  </div>
     </div>
   </nav>
 
-  <a href="/courses">Course Navigator</a> |
   <a href="/login">Login</a> |
   <a href="/register">Register</a> |
   <a href="/profile">Profile</a>
+
   <br/>
   <br/>
   <router-outlet></router-outlet>
