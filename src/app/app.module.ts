@@ -14,6 +14,7 @@ import { ProfileComponent } from './profile/profile.component';
 import {UserServiceClient} from './services/user.service.client';
 import { CourseGridComponent } from './course-grid/course-grid.component';
 import { ModuleListComponent } from './module-list/module-list.component';
+import { LessonTabsComponent } from './lesson-tabs/lesson-tabs.component';
 import {ModuleServiceClient} from './services/module.service.client';
 
 @NgModule({
@@ -25,7 +26,8 @@ import {ModuleServiceClient} from './services/module.service.client';
     RegisterComponent,
     ProfileComponent,
     CourseGridComponent,
-    ModuleListComponent
+    ModuleListComponent,
+    LessonTabsComponent
   ],
   imports: [
     BrowserModule,
