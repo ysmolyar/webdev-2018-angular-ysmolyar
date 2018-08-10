@@ -1,19 +1,19 @@
 <div class="container-fluid">
-  <h1>Welcome to your Profile, {{currentUser.firstName}}</h1>
+  <h1>Welcome to your Profile {{firstName}}</h1>
 
-  <input [(ngModel)]="currentUser.username"
+  <input [(ngModel)]="username"
          placeholder="Username"
          class="form-control"/><br/>
-  <input [(ngModel)]="currentUser.firstName"
+  <input [(ngModel)]="firstName"
          placeholder="First Name"
          class="form-control"/><br/>
-  <input [(ngModel)]="currentUser.lastName"
+  <input [(ngModel)]="lastName"
          placeholder="Last Name"
          class="form-control"/><br/>
-  <input [(ngModel)]="currentUser.email"
+  <input [(ngModel)]="email"
          placeholder="Email"
          class="form-control"/><br/>
-  <input [(ngModel)]="currentUser.phone"
+  <input [(ngModel)]="phone"
          placeholder="(888)-123-4567"
          class="form-control"/><br/>
   <button (click)="update()"
