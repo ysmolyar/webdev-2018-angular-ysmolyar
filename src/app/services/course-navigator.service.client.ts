@@ -4,7 +4,7 @@ import {Injectable} from '@angular/core';
 export class CourseNavigatorServiceClient {
   findAllCourses() {
     return fetch('http://localhost:8080/api/course')
-      .then(response => response.json())
+      .then(response => response.json());
   }
   findAllModulesForGivenCourse(courseId) {
     return fetch('http://localhost:8080/api/course/' + courseId + '/module')

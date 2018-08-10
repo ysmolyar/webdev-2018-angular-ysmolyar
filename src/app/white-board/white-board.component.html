@@ -1,9 +1,20 @@
 <div class="container-fluid">
-  <h1>Welcome to WhiteBoard!</h1>
-
+  <div class="row navbar">
+    <span class="col col-sm-auto float-left">
+      <h5>WhiteBoard</h5>
+    </span>
+    <span class="col col-sm-7">
+    </span>
+    <span class="col col-sm-auto">
+      <button (click)="logout()"
+         class="btn btn-outline">Log Out</button>
+    </span>
+  </div>
   <a href="/courses">Course Navigator</a> |
   <a href="/login">Login</a> |
   <a href="/register">Register</a> |
   <a href="/profile">Profile</a>
+  <br/>
+  <br/>
   <router-outlet></router-outlet>
 </div>
