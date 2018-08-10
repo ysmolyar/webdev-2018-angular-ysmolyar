@@ -1,5 +1,8 @@
 .navbar {
-  background-color: lightslategrey;
+  background-color: dodgerblue;
+}
+.beigeboard {
+  color: white;
 }
 
 h5 {
@@ -12,6 +15,5 @@ h5 {
 .logout {
   color: white;
   padding-top: 10px;
-
-
 }
+
