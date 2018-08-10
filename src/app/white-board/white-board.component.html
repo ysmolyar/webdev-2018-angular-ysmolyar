@@ -14,10 +14,15 @@
       </div>
 
       <div class="col col-sm-auto float-right btns">
-       <button routerLink="/profile"
-               class="btn btn-light profileBtn">Profile</button>
-      <button (click)="logout()"
+       <button [hidden]="!isLoggedIn"
+         routerLink="/profile"
+               class="btn btn-light profileBtn">My Profile</button>
+      <button [hidden]="!isLoggedIn"
+              (click)="logout()"
               class="btn btn-danger">Log Out</button>
+        <button [hidden]="isLoggedIn"
+                (click)="logout()"
+                class="btn btn-success">Log In</button>
   </div>
     </div>
   </nav>

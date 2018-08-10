@@ -23,7 +23,10 @@ export class WhiteBoardComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.userService.isLoggedIn()
+      .then(response => {
+        this.isLoggedIn = response.status !== 404;
+      });
   }
 
 }
