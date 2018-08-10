@@ -60,7 +60,7 @@ export class UserServiceClient {
 
 
   isLoggedIn() {
-    return fetch('https://cs4550-s1-node-npristin.herokuapp.com/api/login/loggedin', {
+    return fetch('http://localhost:3000/api/login/loggedin', {
       credentials: 'include'
     });
   }

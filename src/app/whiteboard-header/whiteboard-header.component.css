@@ -1,0 +1,32 @@
+.navbar {
+  background-color: dodgerblue;
+}
+.beigeboard {
+  color: white;
+  margin-top: 7px;
+}
+
+h5 {
+  color: white;
+}
+
+
+.logout {
+  color: white;
+  padding-top: 10px;
+  margin-left: 10px;
+}
+
+.profileBtn {
+  margin-right: 5px;
+}
+
+.homeLink {
+  color: white;
+}
+
+nav {
+  display: inline-list-item;
+}
+
+

@@ -19,6 +19,7 @@ import {ModuleServiceClient} from './services/module.service.client';
 import {LessonServiceClient} from './services/lesson.service.client';
 import { WidgetListComponent } from './widget-list/widget-list.component';
 import {WidgetServiceClient} from './services/widget.service.client';
+import { WhiteboardHeaderComponent } from './whiteboard-header/whiteboard-header.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {WidgetServiceClient} from './services/widget.service.client';
     CourseGridComponent,
     ModuleListComponent,
     LessonTabsComponent,
-    WidgetListComponent
+    WidgetListComponent,
+    WhiteboardHeaderComponent
   ],
   imports: [
     BrowserModule,
