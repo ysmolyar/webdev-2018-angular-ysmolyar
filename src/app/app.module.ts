@@ -22,6 +22,7 @@ import {WidgetServiceClient} from './services/widget.service.client';
 import { WhiteboardHeaderComponent } from './whiteboard-header/whiteboard-header.component';
 import { SectionListComponent } from './section-list/section-list.component';
 import {SectionServiceClient} from './services/section.service.client';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {SectionServiceClient} from './services/section.service.client';
     LessonTabsComponent,
     WidgetListComponent,
     WhiteboardHeaderComponent,
-    SectionListComponent
+    SectionListComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
