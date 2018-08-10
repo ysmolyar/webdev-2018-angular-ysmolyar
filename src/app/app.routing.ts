@@ -5,6 +5,7 @@ import {RegisterComponent} from './register/register.component';
 import {ProfileComponent} from './profile/profile.component';
 import {WhiteBoardComponent} from './white-board/white-board.component';
 import {CourseGridComponent} from './course-grid/course-grid.component';
+import {SectionListComponent} from './section-list/section-list.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -14,6 +15,7 @@ const appRoutes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'course/:courseId', component: CourseNavigatorComponent },
+  { path: 'course/:courseId/section', component: SectionListComponent },
   { path: 'course/:courseId/module/:moduleId', component: CourseNavigatorComponent },
   { path: 'course/:courseId/module/:moduleId/lesson/:lessonId', component: CourseNavigatorComponent },
   { path: '**', component: WhiteBoardComponent}

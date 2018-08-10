@@ -20,6 +20,8 @@ import {LessonServiceClient} from './services/lesson.service.client';
 import { WidgetListComponent } from './widget-list/widget-list.component';
 import {WidgetServiceClient} from './services/widget.service.client';
 import { WhiteboardHeaderComponent } from './whiteboard-header/whiteboard-header.component';
+import { SectionListComponent } from './section-list/section-list.component';
+import {SectionServiceClient} from './services/section.service.client';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { WhiteboardHeaderComponent } from './whiteboard-header/whiteboard-header
     ModuleListComponent,
     LessonTabsComponent,
     WidgetListComponent,
-    WhiteboardHeaderComponent
+    WhiteboardHeaderComponent,
+    SectionListComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import { WhiteboardHeaderComponent } from './whiteboard-header/whiteboard-header
     UserServiceClient,
     ModuleServiceClient,
     LessonServiceClient,
-    WidgetServiceClient
+    WidgetServiceClient,
+    SectionServiceClient
   ],
   bootstrap: [AppComponent]
 })
