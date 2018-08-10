@@ -1,36 +1,29 @@
 <div class="container-fluid">
   <h1>Profile</h1>
 
+  Username
   <input [(ngModel)]="username"
          placeholder="Username"
          class="form-control"/><br/>
+  First Name
   <input [(ngModel)]="firstName"
          placeholder="First Name"
          class="form-control"/><br/>
+  Last Name
   <input [(ngModel)]="lastName"
          placeholder="Last Name"
          class="form-control"/><br/>
+  Email
   <input [(ngModel)]="email"
          placeholder="Email"
          class="form-control"/><br/>
-  <input [(ngModel)]="phone"
+  Phone Number
+  <input [(ngModel)]="phoneNum"
          placeholder="(888)-123-4567"
          class="form-control"/><br/>
   <button (click)="update()"
           class="btn btn-primary btn-block">
     Update
   </button>
-
-
-  <h2>Sections </h2>
-
-  <!--<ul class="list-group">-->
-    <!--<li *ngFor="let enrollment of sections" class="list-group-item">-->
-      <!--{{enrollment.section.name}}-->
-      <!--({{enrollment.section.seats}})-->
-    <!--</li>-->
-  <!--</ul>-->
-
-  <a routerLink="/home">Home</a>
 
 </div>

@@ -1,5 +1,6 @@
-<div class="container-fluid">
-  <div class="row navbar">
+<div>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="row container-fluid">
     <span class="col col-sm-auto float-left">
       <h5>
         <a routerLink="/home"
@@ -8,18 +9,22 @@
         </a>
       </h5>
     </span>
-    <span class="col col-sm-7">
+      <span class="col col-sm-7">
     </span>
-    <span class="col col-sm-auto">
+      <span class="col col-sm-auto float-right">
+       <button routerLink="/profile"
+               class="btn btn-light profileBtn">Profile</button>
       <button (click)="logout()"
-         class="btn btn-danger">Log Out</button>
-    </span>
-  </div>
+              class="btn btn-danger">Log Out</button>
+  </span>
+    </div>
+  </nav>
+
   <a href="/courses">Course Navigator</a> |
-  <a href="/login">Login</a> |
-  <a href="/register">Register</a> |
-  <a href="/profile">Profile</a>
-  <br/>
-  <br/>
-  <router-outlet></router-outlet>
+    <a href="/login">Login</a> |
+    <a href="/register">Register</a> |
+    <a href="/profile">Profile</a>
+    <br/>
+    <br/>
+    <router-outlet></router-outlet>
 </div>

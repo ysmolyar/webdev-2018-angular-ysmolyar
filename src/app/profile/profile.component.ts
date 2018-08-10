@@ -13,7 +13,7 @@ export class ProfileComponent implements OnInit {
   firstName;
   lastName;
   email;
-  phone;
+  phoneNum;
   role;
   sections = [];
 
@@ -35,7 +35,7 @@ export class ProfileComponent implements OnInit {
       firstName: this.firstName,
       lastName: this.lastName,
       email: this.email,
-      phone: this.phone,
+      phoneNum: this.phoneNum,
       role: this.role
     };
     this.userService.updateUser(user);
@@ -49,7 +49,7 @@ export class ProfileComponent implements OnInit {
         this.firstName = user.firstName;
         this.lastName = user.lastName;
         this.email = user.email;
-        this.phone = user.phone;
+        this.phoneNum = user.phoneNum;
         this.role = user.role;
       });
 

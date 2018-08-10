@@ -34,8 +34,11 @@ export class RegisterComponent implements OnInit {
     };
 
     const pass2 = this.password2;
-
-    if (pass2 !== user.password) {
+    if (user.password === undefined) {
+      alert('Please enter a password!');
+    } else if (user.username === undefined) {
+      alert('Please enter a username!');
+    } else if (pass2 !== user.password) {
       alert('Passwords do not match!');
     } else {
       this.userService.register(user)
