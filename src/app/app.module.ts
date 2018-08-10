@@ -13,6 +13,7 @@ import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import {UserServiceClient} from './services/user.service.client';
 import { CourseGridComponent } from './course-grid/course-grid.component';
+import { ModuleListComponent } from './module-list/module-list.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CourseGridComponent } from './course-grid/course-grid.component';
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
-    CourseGridComponent
+    CourseGridComponent,
+    ModuleListComponent
   ],
   imports: [
     BrowserModule,
