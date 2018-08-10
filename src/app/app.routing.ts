@@ -6,6 +6,7 @@ import {ProfileComponent} from './profile/profile.component';
 import {WhiteBoardComponent} from './white-board/white-board.component';
 import {CourseGridComponent} from './course-grid/course-grid.component';
 import {SectionListComponent} from './section-list/section-list.component';
+import {AdminComponent} from './admin/admin.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,6 +19,8 @@ const appRoutes: Routes = [
   { path: 'course/:courseId/section', component: SectionListComponent },
   { path: 'course/:courseId/module/:moduleId', component: CourseNavigatorComponent },
   { path: 'course/:courseId/module/:moduleId/lesson/:lessonId', component: CourseNavigatorComponent },
+  { path: 'admin/course', component: AdminComponent},
+  { path: 'admin/course/:courseId/section', component: AdminComponent },
   { path: '**', component: WhiteBoardComponent}
 ];
 

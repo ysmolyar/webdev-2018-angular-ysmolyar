@@ -1,3 +1,25 @@
-<p>
-  admin works!
-</p>
+<div>
+<app-whiteboard-header></app-whiteboard-header>
+<div class="container-fluid">
+  <div>
+    <h1>Courses</h1>
+  </div>
+
+  <div class="row modules">
+    <div class="col-4">
+      <ul class="list-group">
+        <li *ngFor="let course of courses"
+            class="list-group-item section">
+          {{course.title}}
+          <a routerLink="/admin/course/{{course.id}}/section"
+             class="btn btn-info float-right">Edit Sections</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-8">
+      <h3>{{courseTitle}}</h3>
+      <app-admin-section-list></app-admin-section-list>
+    </div>
+  </div>
+</div>
+</div>
