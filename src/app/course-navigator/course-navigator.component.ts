@@ -9,6 +9,7 @@ import {CourseServiceClient} from '../services/course.service.client';
 export class CourseNavigatorComponent implements OnInit {
 
   courses = [];
+  modules = [];
   selectedCourse = {};
   selectedModule = {};
 
