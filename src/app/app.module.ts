@@ -15,6 +15,7 @@ import {UserServiceClient} from './services/user.service.client';
 import { CourseGridComponent } from './course-grid/course-grid.component';
 import { ModuleListComponent } from './module-list/module-list.component';
 import { LessonTabsComponent } from './lesson-tabs/lesson-tabs.component';
+import {ModuleServiceClient} from './services/module.service.client';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { LessonTabsComponent } from './lesson-tabs/lesson-tabs.component';
   ],
   providers: [
     CourseServiceClient,
-    UserServiceClient
+    UserServiceClient,
+    ModuleServiceClient
   ],
   bootstrap: [AppComponent]
 })
