@@ -14,11 +14,11 @@ h5 {
 .logout {
   color: white;
   padding-top: 10px;
+  margin-left: 10px;
 }
 
 .profileBtn {
-
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 .homeLink {
