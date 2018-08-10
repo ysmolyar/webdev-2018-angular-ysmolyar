@@ -27,6 +27,11 @@ export class WhiteboardHeaderComponent implements OnInit {
       .then(response => {
         this.isLoggedIn = response.status !== 404;
       });
+
+    this.userService.profile()
+      .then(user => {
+      this.isAdmin = user.role === 'ADMIN'
+    });
   }
 
 }

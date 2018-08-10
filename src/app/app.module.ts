@@ -23,6 +23,7 @@ import { WhiteboardHeaderComponent } from './whiteboard-header/whiteboard-header
 import { SectionListComponent } from './section-list/section-list.component';
 import {SectionServiceClient} from './services/section.service.client';
 import { AdminComponent } from './admin/admin.component';
+import { AdminSectionListComponent } from './admin-section-list/admin-section-list.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { AdminComponent } from './admin/admin.component';
     WidgetListComponent,
     WhiteboardHeaderComponent,
     SectionListComponent,
-    AdminComponent
+    AdminComponent,
+    AdminSectionListComponent
   ],
   imports: [
     BrowserModule,

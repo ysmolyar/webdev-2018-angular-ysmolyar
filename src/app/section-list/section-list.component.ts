@@ -14,10 +14,9 @@ export class SectionListComponent implements OnInit {
               private router: Router,
               private route: ActivatedRoute,
               private userService: UserServiceClient) {
-    this.route.params.subscribe(params => this.loadSections(params['courseId']))
+    this.route.params.subscribe(params => this.loadSections(params['courseId']));
   }
 
-  sectionName = '';
   seats = '';
   courseId = '';
   sections = [];
@@ -33,7 +32,7 @@ export class SectionListComponent implements OnInit {
         if (this.loggedIn) {
           this.userService.profile()
             .then(user => {
-              this.admin = user.username === 'admin';
+              this.admin = user.role === 'ADMIN';
             });
         }
       });

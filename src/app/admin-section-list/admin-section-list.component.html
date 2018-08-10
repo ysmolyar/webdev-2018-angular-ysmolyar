@@ -1,0 +1,25 @@
+<div class="container-fluid" [hidden]="!loaded">
+  <input [(ngModel)]="sectionName"
+         placeholder="Section Name"
+         class="form-control secName">
+  <input [(ngModel)]="seats"
+         placeholder="Seats Available"
+         class="form-control"><br/>
+  <button (click)="createSection(sectionName, seats)" class="btn btn-info btn-block">
+    Add Section
+  </button><br/>
+
+  <ul class="list-group sections">
+    <li *ngFor="let section of sections" class="list-group-item">
+      <input [(ngModel)]="section.name"
+             placeholder="Section Name">
+      Seats Available: {{section.seats}}
+      <button (click)="deleteSection(section._id)"
+              class="float-right btn btn-danger deleteBtn">Delete
+      </button>
+      <button (click)="editSection(section._id, section.name)"
+              class="float-right btn btn-info">Save
+      </button>
+    </li>
+  </ul>
+</div>
