@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 export class WhiteboardHeaderComponent implements OnInit {
 
   isLoggedIn;
+  isAdmin;
 
   constructor(private userService: UserServiceClient, private router: Router) { }
 

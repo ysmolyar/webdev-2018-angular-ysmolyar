@@ -1,26 +1,29 @@
-<div class="container-fluid">
-<h2>Currently Available Courses:</h2>
+<div>
+  <app-whiteboard-header></app-whiteboard-header>
+  <div class="container-fluid">
+    <h2>Currently Available Courses:</h2>
 
 
-<div class="row">
+    <div class="row">
 
-  <div *ngFor="let course of courses"
-       class="col-sm-3">
-    <div class="card">
+      <div *ngFor="let course of courses"
+           class="col-sm-3">
+        <div class="card">
 
-      <div class="card-body">
+          <div class="card-body">
 
-        <h5 class="card-title">
-          {{course.title}}
-        </h5>
-        <span>
+            <h5 class="card-title">
+              {{course.title}}
+            </h5>
+            <span>
         <a routerLink="/course/{{course.id}}"
            class="btn btn-dark">View</a>
         <a routerLink="/course/{{course.id}}/section"
            class="btn btn-primary enroll-button">Enroll</a>
           </span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>

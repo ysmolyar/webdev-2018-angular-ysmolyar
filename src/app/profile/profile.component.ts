@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UserServiceClient} from '../services/user.service.client';
 import {Router} from '@angular/router';
+import {SectionServiceClient} from '../services/section.service.client';
 
 @Component({
   selector: 'app-profile',
@@ -19,6 +20,7 @@ export class ProfileComponent implements OnInit {
   sections = [];
 
   constructor(private userService: UserServiceClient,
+              private sectionService: SectionServiceClient,
               private router: Router) { }
 
   logout() {
@@ -55,6 +57,19 @@ export class ProfileComponent implements OnInit {
         this.isAdmin = user.role === 'ADMIN';
       });
 
+
+    this.sectionService
+      .findSectionsForStudent()
+      .then(sections => this.sections = sections );
+
+  }
+
+
+  unenroll(section) {
+    this.sectionService.unEnrollStudent(section._id)
+      .then(sections => {
+        this.sections = sections;
+      });
   }
 
 }

@@ -9,13 +9,16 @@
     <div class="col col-sm-2">
       <a href="/home" class="homeLink">Home</a>
     </div>
-    <div class="col col-sm-5">
+    <div class="col col-sm-4">
     </div>
 
     <div class="col col-sm-auto float-right btns">
       <button [hidden]="!isLoggedIn"
               routerLink="/profile"
               class="btn btn-light profileBtn">My Profile</button>
+      <button [hidden]="!isLoggedIn"
+              routerLink="/profile"
+              class="btn btn-light profileBtn">ADMIN</button>
       <button [hidden]="!isLoggedIn"
               (click)="logout()"
               class="btn btn-danger">Log Out</button>
