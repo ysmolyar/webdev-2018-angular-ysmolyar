@@ -38,11 +38,24 @@ export class UserServiceClient {
     return fetch('http://localhost:3000/api/profile', {
       body: JSON.stringify(user),
       credentials: 'include',
-      method: 'put',
+      method: 'PUT',
       headers: {
         'content-type': 'application/json'
       }
     }).then(response => response.json());
+  }
+
+  register(user) {
+
+    return fetch('http://localhost:3000/api/register',
+      {
+        body: JSON.stringify(user),
+        credentials: 'include',
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json'
+        }
+      });
   }
 
 }

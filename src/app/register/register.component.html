@@ -1,3 +1,74 @@
-<p>
-  register works!
-</p>
+<div>
+  <h1>Register</h1>
+  <div>
+      First Name
+    <input [(ngModel)]="firstName"
+           type="text"
+           class="form-control wbdv"/>
+  </div>
+  <div>
+      Last Name
+    <input [(ngModel)]="lastName"
+           type="text"
+           class="form-control wbdv"/>
+  </div>
+  <div>
+    Email
+    <input [(ngModel)]="email"
+           type="text"
+           class="form-control wbdv"/>
+  </div>
+  <div>
+      Phone Number
+    <input [(ngModel)]="phoneNum"
+           type="text"
+           class="form-control"
+           placeholder="555-123-4567"/>
+  </div>
+  <div>
+      Role
+    <select [(ngModel)]="role"
+            class="form-control wbdv">
+      <option value="">
+        --Select Role--
+      </option>
+      <option value="FACULTY">
+        Faculty
+      </option>
+      <option value="STUDENT">
+        Student
+      </option>
+      <option value="ADMIN">
+        Admin
+      </option>
+    </select>
+  </div>
+
+
+  <div>
+      Username
+    <input [(ngModel)]="username"
+           type="text"
+           class="form-control wbdv"/>
+  </div>
+  <div>
+      Password
+    <input [(ngModel)]="password"
+           type="password"
+           class="form-control wbdv"/>
+  </div>
+  <div>
+      Validate Password
+    <input [(ngModel)]="password2"
+           type="password"
+           class="form-control wbdv"/>
+  </div>
+  <br/>
+  <button (click)="register()"
+    class="btn btn-success">
+    Register
+  </button>
+  <a href="../login/login.template.client.html">
+       Already registered? Log in here!
+  </a>
+</div>

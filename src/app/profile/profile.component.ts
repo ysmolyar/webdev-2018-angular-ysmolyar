@@ -9,7 +9,12 @@ import {Router} from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
 
-  currentUser = {};
+  username;
+  firstName;
+  lastName;
+  email;
+  phone;
+  role;
   sections = [];
 
   constructor(private userService: UserServiceClient,
@@ -26,11 +31,12 @@ export class ProfileComponent implements OnInit {
   update() {
 
     const user = {
-      username: this.currentUser.username,
-      password: this.currentUser.password,
-      firstName: this.currentUser.firstName,
-      lastName: this.currentUser.lastName,
-      email: this.currentUser.email,
+      username: this.username,
+      firstName: this.firstName,
+      lastName: this.lastName,
+      email: this.email,
+      phone: this.phone,
+      role: this.role
     };
     this.userService.updateUser(user);
   }
@@ -38,8 +44,14 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.userService
       .profile()
-      .then(user =>
-        this.currentUser = user);
+      .then(user => {
+        this.username = user.username;
+        this.firstName = user.firstName;
+        this.lastName = user.lastName;
+        this.email = user.email;
+        this.phone = user.phone;
+        this.role = user.role;
+      });
 
   }
 
