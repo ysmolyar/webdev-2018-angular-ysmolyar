@@ -10,6 +10,8 @@ import {Router} from '@angular/router';
 })
 export class WhiteBoardComponent implements OnInit {
 
+  isLoggedIn;
+
   constructor(private userService: UserServiceClient, private router: Router) { }
 
 

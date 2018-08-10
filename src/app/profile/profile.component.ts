@@ -15,6 +15,7 @@ export class ProfileComponent implements OnInit {
   email;
   phoneNum;
   role;
+  isAdmin;
   sections = [];
 
   constructor(private userService: UserServiceClient,
@@ -51,6 +52,7 @@ export class ProfileComponent implements OnInit {
         this.email = user.email;
         this.phoneNum = user.phoneNum;
         this.role = user.role;
+        this.isAdmin = user.role === 'ADMIN';
       });
 
   }

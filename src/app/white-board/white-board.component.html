@@ -1,16 +1,18 @@
 <div>
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="row container-fluid">
-    <span class="col col-sm-auto float-left">
-      <h5>
-        <a routerLink="/home"
-           class="beigeboard">
-          WhiteBoard
-        </a>
-      </h5>
-    </span>
-      <span class="col col-sm-7">
-    </span>
+    <div class="col col-sm-2">
+      <a class="beigeboard" href="/home">
+        <h4 class="beigeboard">WhiteBoard</h4>
+      </a>
+
+    </div>
+      <div class="col col-sm-2">
+      <a href="/home" class="homeLink">Home</a>
+      </div>
+      <div class="col col-sm-6">
+      </div>
+
       <span class="col col-sm-auto float-right">
        <button routerLink="/profile"
                class="btn btn-light profileBtn">Profile</button>
@@ -21,10 +23,10 @@
   </nav>
 
   <a href="/courses">Course Navigator</a> |
-    <a href="/login">Login</a> |
-    <a href="/register">Register</a> |
-    <a href="/profile">Profile</a>
-    <br/>
-    <br/>
-    <router-outlet></router-outlet>
+  <a href="/login">Login</a> |
+  <a href="/register">Register</a> |
+  <a href="/profile">Profile</a>
+  <br/>
+  <br/>
+  <router-outlet></router-outlet>
 </div>
