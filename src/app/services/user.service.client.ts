@@ -33,4 +33,16 @@ export class UserServiceClient {
       .then(response => response.json());
   }
 
+
+  updateUser(user) {
+    return fetch('http://localhost:3000/api/profile', {
+      body: JSON.stringify(user),
+      credentials: 'include',
+      method: 'put',
+      headers: {
+        'content-type': 'application/json'
+      }
+    }).then(response => response.json());
+  }
+
 }

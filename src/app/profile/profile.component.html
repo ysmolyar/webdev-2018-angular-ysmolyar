@@ -1,21 +1,29 @@
 <div class="container-fluid">
   <h1>Welcome to your Profile, {{currentUser.firstName}}</h1>
 
-  <input [(ngModel)]="username"
-         placeholder="username"
-         class="form-control"/>
-  <input [(ngModel)]="firstName"
-         placeholder="first name"
-         class="form-control"/>
-  <input [(ngModel)]="lastName"
-         placeholder="lastName"
-         class="form-control"/>
-  <input [(ngModel)]="email"
-         placeholder="email"
-         class="form-control"/>
+  <input [(ngModel)]="currentUser.username"
+         placeholder="Username"
+         class="form-control"/><br/>
+  <input [(ngModel)]="currentUser.firstName"
+         placeholder="First Name"
+         class="form-control"/><br/>
+  <input [(ngModel)]="currentUser.lastName"
+         placeholder="Last Name"
+         class="form-control"/><br/>
+  <input [(ngModel)]="currentUser.email"
+         placeholder="Email"
+         class="form-control"/><br/>
+  <input [(ngModel)]="currentUser.phone"
+         placeholder="(888)-123-4567"
+         class="form-control"/><br/>
   <button (click)="update()"
           class="btn btn-primary btn-block">
     Update
+  </button>
+
+  <button (click)="logout()"
+          class="btn btn-danger btn-block">
+    Logout
   </button>
 
   <h2>Sections </h2>
@@ -27,7 +35,6 @@
     <!--</li>-->
   <!--</ul>-->
 
-  <a (click)="logout()">Logout</a>
   <a routerLink="/home">Home</a>
 
 </div>

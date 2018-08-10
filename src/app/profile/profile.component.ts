@@ -10,28 +10,36 @@ import {Router} from '@angular/router';
 export class ProfileComponent implements OnInit {
 
   currentUser = {};
-  username;
-  password;
   sections = [];
 
   constructor(private userService: UserServiceClient,
-              // private sectionService: SectionServiceClient,
               private router: Router) { }
 
-  updateUser(user) {
-    console.log(user);
-  }
   logout() {
     this.userService
       .logout()
       .then(() =>
         this.router.navigate(['login']));
   }
+
+
+  update() {
+
+    const user = {
+      username: this.currentUser.username,
+      password: this.currentUser.password,
+      firstName: this.currentUser.firstName,
+      lastName: this.currentUser.lastName,
+      email: this.currentUser.email,
+    };
+    this.userService.updateUser(user);
+  }
+
   ngOnInit() {
     this.userService
       .profile()
       .then(user =>
-        this.username = user.username);
+        this.currentUser = user);
 
   }
 
