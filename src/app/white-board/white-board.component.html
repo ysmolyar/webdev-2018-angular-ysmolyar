@@ -1,13 +1,18 @@
 <div class="container-fluid">
   <div class="row navbar">
     <span class="col col-sm-auto float-left">
-      <h5>WhiteBoard</h5>
+      <h5>
+        <a routerLink="/home"
+           class="beigeboard">
+          WhiteBoard
+        </a>
+      </h5>
     </span>
     <span class="col col-sm-7">
     </span>
     <span class="col col-sm-auto">
       <button (click)="logout()"
-         class="btn btn-outline">Log Out</button>
+         class="btn btn-danger">Log Out</button>
     </span>
   </div>
   <a href="/courses">Course Navigator</a> |
