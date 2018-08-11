@@ -13,16 +13,16 @@
     </div>
 
     <div class="col col-sm-auto float-right btns">
-      <button [hidden]="!isLoggedIn"
+      <button *ngIf='isLoggedIn'
               routerLink="/profile"
               class="btn btn-light profileBtn">My Profile</button>
-      <button [hidden]="!isAdmin"
+      <button *ngIf='isAdmin'
               routerLink="/admin/course"
               class="btn btn-light profileBtn">Admin</button>
-      <button [hidden]="!isLoggedIn"
+      <button *ngIf="isLoggedIn"
               (click)="logout()"
               class="btn btn-danger">Log Out</button>
-      <button [hidden]="isLoggedIn"
+      <button *ngIf="!isLoggedIn"
               (click)="logout()"
               class="btn btn-success">Log In</button>
     </div>

@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
 })
 export class WhiteboardHeaderComponent implements OnInit {
 
-  isLoggedIn;
+  isLoggedIn = false;
   isAdmin;
 
   constructor(private userService: UserServiceClient, private router: Router) { }
@@ -26,6 +26,7 @@ export class WhiteboardHeaderComponent implements OnInit {
   ngOnInit() {
     this.userService.isLoggedIn()
       .then(response => {
+        console.log('STATUS ' + response.status);
         this.isLoggedIn = response.status !== 404;
       });
 
