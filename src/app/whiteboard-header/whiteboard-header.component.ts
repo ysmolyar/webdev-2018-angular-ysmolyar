@@ -18,8 +18,9 @@ export class WhiteboardHeaderComponent implements OnInit {
   logout() {
     this.userService
       .logout()
-      .then(() =>
-        this.router.navigate(['login']));
+      .then(() => {
+        this.router.navigate(['login']);
+      });
   }
 
   ngOnInit() {
@@ -30,8 +31,10 @@ export class WhiteboardHeaderComponent implements OnInit {
 
     this.userService.profile()
       .then(user => {
-      this.isAdmin = user.role === 'ADMIN'
-    });
+        if (user !== undefined) {
+          this.isAdmin = user.role === 'ADMIN';
+        }
+      });
   }
 
 }

@@ -15,26 +15,26 @@ export class UserServiceClient {
       headers: {
         'content-type': 'application/json'
       }
-    });
+    }).then(response => response.json());
   }
 
   logout() {
-    return fetch('https://webdev-ysmolyar-nodejs.herokuapp.com/api/logout', {
+    return fetch('http://localhost:3000/api/logout', {
       method: 'post',
       credentials: 'include'
     });
   }
 
+  // https://webdev-ysmolyar-nodejs.herokuapp.com/api/profile
   profile() {
-    return fetch('https://webdev-ysmolyar-nodejs.herokuapp.com/api/profile',
+    return fetch('http://localhost:3000/api/profile',
       {
-        credentials: 'include',
-      });
+        credentials: 'include'
+      }).then(response => response.json());
   }
 
-
   updateUser(user) {
-    return fetch('https://webdev-ysmolyar-nodejs.herokuapp.com/api/profile', {
+    return fetch('http://localhost:3000/api/profile', {
       body: JSON.stringify(user),
       credentials: 'include',
       method: 'PUT',
@@ -46,14 +46,16 @@ export class UserServiceClient {
 
 
   isLoggedIn() {
-    return fetch('https://webdev-ysmolyar-nodejs.herokuapp.com/api/login/loggedin', {
+    return fetch('http://localhost:3000/api/login/loggedin', {
       credentials: 'include'
     });
   }
 
   register(user) {
 
-    return fetch('https://webdev-ysmolyar-nodejs.herokuapp.com/api/register',
+    const url = 'https://webdev-ysmolyar-nodejs.herokuapp.com/api/register';
+    const localURL = 'http://localhost:3000/api/register';
+    return fetch(localURL,
       {
         body: JSON.stringify(user),
         credentials: 'include',
