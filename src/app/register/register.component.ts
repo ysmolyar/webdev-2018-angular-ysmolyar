@@ -45,13 +45,7 @@ export class RegisterComponent implements OnInit {
         .then((response) => {
           if (response.status === 400) {
             alert('Sorry, that username is already taken. Please pick a different username.');
-            return;
           } else {
-            return response.json();
-          }
-        })
-        .then((usr) => {
-          if (usr) {
             this.router.navigate(['/profile']);
           }
         });

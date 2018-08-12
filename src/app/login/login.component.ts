@@ -24,10 +24,8 @@ export class LoginComponent implements OnInit {
         console.log('response: ' + response.status);
 
         if (response.status === 204) {
-          console.log('Invalid credentials!');
           window.alert('Invalid credentials!');
         } else {
-          window.alert('Just logged in username' + username);
           this.router.navigate(['/profile']);
           return response.json();
         }
