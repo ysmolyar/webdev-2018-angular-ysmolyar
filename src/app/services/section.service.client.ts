@@ -1,9 +1,9 @@
 export class SectionServiceClient {
 
-  SECTION_URL = 'https://webdev-ysmolyar-nodejs.herokuapp.com';
+  SECTION_URL = 'http://localhost:3000/api/course/CID/section';
 
   findSectionsForStudent() {
-    const url = 'https://webdev-ysmolyar-nodejs.herokuapp.com/api/student/section';
+    const url = 'http://localhost:3000/api/student/section';
     return fetch(url, {
       credentials: 'include'
     })
@@ -11,7 +11,7 @@ export class SectionServiceClient {
   }
 
   enrollStudentInSection(sectionId) {
-    const url = 'https://webdev-ysmolyar-nodejs.herokuapp.com/api/student/' + sectionId + '/section';
+    const url = 'http://localhost:3000/api/student/' + sectionId + '/section';
     return fetch(url, {
       method: 'post',
       credentials: 'include'
@@ -19,13 +19,13 @@ export class SectionServiceClient {
   }
 
   findSectionsForCourse(courseId) {
-    return fetch(this.SECTION_URL.replace('COURSEID', courseId))
+    return fetch(this.SECTION_URL.replace('CID', courseId))
       .then(response => response.json());
   }
 
   createSection(courseId, name, seats) {
     const section = {courseId, name, seats};
-    return fetch(this.SECTION_URL.replace('COURSEID', courseId), {
+    return fetch(this.SECTION_URL.replace('CID', courseId), {
       method: 'post',
       body: JSON.stringify(section),
       credentials: 'include',
@@ -36,14 +36,14 @@ export class SectionServiceClient {
   }
 
   deleteSection(sectionId, courseId) {
-    return fetch('https://webdev-ysmolyar-nodejs.herokuapp.com/api/section/' + sectionId, {
+    return fetch('http://localhost:3000/api/section/' + sectionId, {
       method: 'delete',
       credentials: 'include'
     }).then(() => this.findSectionsForCourse(courseId));
   }
 
   unEnrollStudent(sectionId) {
-    const url = 'https://webdev-ysmolyar-nodejs.herokuapp.com/api/student/' + sectionId + '/section';
+    const url = 'http://localhost:3000/api/student/' + sectionId + '/section';
     return fetch(url, {
       method: 'delete',
       credentials: 'include'
@@ -56,7 +56,7 @@ export class SectionServiceClient {
       name: sectionName
     };
 
-    return fetch('https://webdev-ysmolyar-nodejs.herokuapp.com/api/section/' + sectionId, {
+    return fetch('http://localhost:3000/api/section/' + sectionId, {
       body: JSON.stringify(section),
       credentials: 'include',
       method: 'put',
