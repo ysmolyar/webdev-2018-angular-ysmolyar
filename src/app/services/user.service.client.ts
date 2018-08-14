@@ -8,7 +8,7 @@ export class UserServiceClient {
       username: username,
       password: password
     };
-    return fetch('https://webdev-2018-ysmolyar-angularjs.herokuapp.com/api/login', {
+    return fetch('https://webdev-ysmolyar-nodejs.herokuapp.com/api/login', {
       method: 'post',
       body: JSON.stringify(credentials),
       credentials: 'include',
@@ -19,7 +19,7 @@ export class UserServiceClient {
   }
 
   logout() {
-    return fetch('https://webdev-2018-ysmolyar-angularjs.herokuapp.com/api/logout', {
+    return fetch('https://webdev-ysmolyar-nodejs.herokuapp.com/api/logout', {
       method: 'post',
       credentials: 'include'
     });
@@ -27,14 +27,14 @@ export class UserServiceClient {
 
   // https://webdev-ysmolyar-nodejs.herokuapp.com/api/profile
   profile() {
-    return fetch('https://webdev-2018-ysmolyar-angularjs.herokuapp.com/api/profile',
+    return fetch('https://webdev-ysmolyar-nodejs.herokuapp.com/api/profile',
       {
         credentials: 'include'
       }).then(response => response.json());
   }
 
   updateUser(user) {
-    return fetch('https://webdev-2018-ysmolyar-angularjs.herokuapp.com/api/profile', {
+    return fetch('https://webdev-ysmolyar-nodejs.herokuapp.com/api/profile', {
       body: JSON.stringify(user),
       credentials: 'include',
       method: 'PUT',
@@ -46,14 +46,14 @@ export class UserServiceClient {
 
 
   isLoggedIn() {
-    return fetch('https://webdev-2018-ysmolyar-angularjs.herokuapp.com/api/login/loggedin', {
+    return fetch('https://webdev-ysmolyar-nodejs.herokuapp.com/api/login/loggedin', {
       credentials: 'include'
     });
   }
 
   register(user) {
 
-    const url = 'https://webdev-2018-ysmolyar-angularjs.herokuapp.com/api/register';
+    const url = 'https://webdev-ysmolyar-nodejs.herokuapp.com/api/register';
     return fetch(url,
       {
         body: JSON.stringify(user),
