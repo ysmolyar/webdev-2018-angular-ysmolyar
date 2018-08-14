@@ -24,6 +24,10 @@ import { SectionListComponent } from './section-list/section-list.component';
 import {SectionServiceClient} from './services/section.service.client';
 import { AdminComponent } from './admin/admin.component';
 import { AdminSectionListComponent } from './admin-section-list/admin-section-list.component';
+import { QuizListComponent } from './quiz-list/quiz-list.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { QuizSubmissionsComponent } from './quiz-submissions/quiz-submissions.component';
+import { QuizAnswersComponent } from './quiz-answers/quiz-answers.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,11 @@ import { AdminSectionListComponent } from './admin-section-list/admin-section-li
     WhiteboardHeaderComponent,
     SectionListComponent,
     AdminComponent,
-    AdminSectionListComponent
+    AdminSectionListComponent,
+    QuizListComponent,
+    QuizComponent,
+    QuizSubmissionsComponent,
+    QuizAnswersComponent
   ],
   imports: [
     BrowserModule,
