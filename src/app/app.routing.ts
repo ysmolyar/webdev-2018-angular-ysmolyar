@@ -7,10 +7,18 @@ import {WhiteBoardComponent} from './white-board/white-board.component';
 import {CourseGridComponent} from './course-grid/course-grid.component';
 import {SectionListComponent} from './section-list/section-list.component';
 import {AdminComponent} from './admin/admin.component';
+import {QuizListComponent} from './quiz-list/quiz-list.component';
+import {QuizComponent} from './quiz/quiz.component';
+import {QuizSubmissionsComponent} from './quiz-submissions/quiz-submissions.component';
+import {QuizAnswersComponent} from './quiz-answers/quiz-answers.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: CourseGridComponent },
+  { path: 'quizzes', component: QuizListComponent},
+  { path: 'quiz/:quizId', component: QuizComponent},
+  { path: 'quiz/:quizId/submissions', component: QuizSubmissionsComponent},
+  { path: 'quiz/:quizId/submission/:submissionId', component: QuizAnswersComponent},
   { path: 'courses', component: CourseNavigatorComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
