@@ -1,9 +1,11 @@
 export class SectionServiceClient {
 
-  SECTION_URL = 'https://webdev-ysmolyar-nodejs.herokuapp.com/api/course/CID/section';
+  HEROKU = 'https://webdev-ysmolyar-nodejs.herokuapp.com';
+  LOCALHOST = 'http://localhost:3000';
+  SECTION_URL = this.LOCALHOST + '/api/course/CID/section';
 
   findSectionsForStudent() {
-    const url = 'https://webdev-ysmolyar-nodejs.herokuapp.com/api/student/section';
+    const url = this.LOCALHOST + '/api/student/section';
     return fetch(url, {
       credentials: 'include'
     })
@@ -11,7 +13,7 @@ export class SectionServiceClient {
   }
 
   enrollStudentInSection(sectionId) {
-    const url = 'https://webdev-ysmolyar-nodejs.herokuapp.com/api/student/' + sectionId + '/section';
+    const url = this.LOCALHOST + '/api/student/' + sectionId + '/section';
     return fetch(url, {
       method: 'post',
       credentials: 'include'
@@ -36,14 +38,14 @@ export class SectionServiceClient {
   }
 
   deleteSection(sectionId, courseId) {
-    return fetch('https://webdev-ysmolyar-nodejs.herokuapp.com/api/section/' + sectionId, {
+    return fetch(this.LOCALHOST + '/api/section/' + sectionId, {
       method: 'delete',
       credentials: 'include'
     }).then(() => this.findSectionsForCourse(courseId));
   }
 
   unEnrollStudent(sectionId) {
-    const url = 'https://webdev-ysmolyar-nodejs.herokuapp.com/api/student/' + sectionId + '/section';
+    const url = this.LOCALHOST + '/api/student/' + sectionId + '/section';
     return fetch(url, {
       method: 'delete',
       credentials: 'include'
@@ -56,7 +58,7 @@ export class SectionServiceClient {
       name: sectionName
     };
 
-    return fetch('https://webdev-ysmolyar-nodejs.herokuapp.com/api/section/' + sectionId, {
+    return fetch(this.LOCALHOST + '/api/section/' + sectionId, {
       body: JSON.stringify(section),
       credentials: 'include',
       method: 'put',

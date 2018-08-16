@@ -3,12 +3,15 @@ import {Injectable} from '@angular/core';
 @Injectable()
 export class UserServiceClient {
 
+  HEROKU = 'https://webdev-ysmolyar-nodejs.herokuapp.com';
+  LOCALHOST = 'http://localhost:3000';
+
   login(username, password) {
     const credentials = {
       username: username,
       password: password
     };
-    return fetch('https://webdev-ysmolyar-nodejs.herokuapp.com/api/login', {
+    return fetch(this.LOCALHOST + '/api/login', {
       method: 'post',
       body: JSON.stringify(credentials),
       credentials: 'include',
@@ -19,7 +22,7 @@ export class UserServiceClient {
   }
 
   logout() {
-    return fetch('https://webdev-ysmolyar-nodejs.herokuapp.com/api/logout', {
+    return fetch(this.LOCALHOST + '/api/logout', {
       method: 'post',
       credentials: 'include'
     });
@@ -27,14 +30,14 @@ export class UserServiceClient {
 
   // https://webdev-ysmolyar-nodejs.herokuapp.com/api/profile
   profile() {
-    return fetch('https://webdev-ysmolyar-nodejs.herokuapp.com/api/profile',
+    return fetch(this.LOCALHOST + '/api/profile',
       {
         credentials: 'include'
       }).then(response => response.json());
   }
 
   updateUser(user) {
-    return fetch('https://webdev-ysmolyar-nodejs.herokuapp.com/api/profile', {
+    return fetch(this.LOCALHOST + '/api/profile', {
       body: JSON.stringify(user),
       credentials: 'include',
       method: 'PUT',
@@ -46,14 +49,14 @@ export class UserServiceClient {
 
 
   isLoggedIn() {
-    return fetch('https://webdev-ysmolyar-nodejs.herokuapp.com/api/login/loggedin', {
+    return fetch(this.LOCALHOST + '/api/login/loggedin', {
       credentials: 'include'
     });
   }
 
   register(user) {
 
-    const url = 'https://webdev-ysmolyar-nodejs.herokuapp.com/api/register';
+    const url = this.LOCALHOST + '/api/register';
     return fetch(url,
       {
         body: JSON.stringify(user),
