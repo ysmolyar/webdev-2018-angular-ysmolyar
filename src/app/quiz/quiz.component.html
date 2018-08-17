@@ -10,6 +10,16 @@
       <span class="float-right">{{question.points}} points</span>
       </h4>
       <p>{{question.description}}</p>
+      <div [ngSwitch]="question.questionType">
+        <app-true-false-question [question]="question"
+                                 *ngSwitchCase="'TRUE_FALSE'"></app-true-false-question>
+        <app-fill-blanks-question [question]="question"
+                                  *ngSwitchCase="'FILL_BLANKS'"></app-fill-blanks-question>
+        <app-essay-question [question]="question"
+                            *ngSwitchCase="'ESSAY'"></app-essay-question>
+        <app-multiple-choice-question [question]="question"
+                                      *ngSwitchCase="'MULTIPLE_CHOICE'"></app-multiple-choice-question>
+      </div>
     </li>
   </ul>
 </div>
