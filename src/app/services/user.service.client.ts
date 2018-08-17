@@ -11,7 +11,7 @@ export class UserServiceClient {
       username: username,
       password: password
     };
-    return fetch(this.LOCALHOST + '/api/login', {
+    return fetch(this.HEROKU + '/api/login', {
       method: 'post',
       body: JSON.stringify(credentials),
       credentials: 'include',
@@ -22,7 +22,7 @@ export class UserServiceClient {
   }
 
   logout() {
-    return fetch(this.LOCALHOST + '/api/logout', {
+    return fetch(this.HEROKU + '/api/logout', {
       method: 'post',
       credentials: 'include'
     });
@@ -30,14 +30,14 @@ export class UserServiceClient {
 
   // https://webdev-ysmolyar-nodejs.herokuapp.com/api/profile
   profile() {
-    return fetch(this.LOCALHOST + '/api/profile',
+    return fetch(this.HEROKU + '/api/profile',
       {
         credentials: 'include'
       }).then(response => response.json());
   }
 
   updateUser(user) {
-    return fetch(this.LOCALHOST + '/api/profile', {
+    return fetch(this.HEROKU + '/api/profile', {
       body: JSON.stringify(user),
       credentials: 'include',
       method: 'PUT',
@@ -49,14 +49,14 @@ export class UserServiceClient {
 
 
   isLoggedIn() {
-    return fetch(this.LOCALHOST + '/api/login/loggedin', {
+    return fetch(this.HEROKU + '/api/login/loggedin', {
       credentials: 'include'
     });
   }
 
   register(user) {
 
-    const url = this.LOCALHOST + '/api/register';
+    const url = this.HEROKU + '/api/register';
     return fetch(url,
       {
         body: JSON.stringify(user),

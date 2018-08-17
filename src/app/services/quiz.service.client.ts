@@ -4,22 +4,22 @@ export class QuizServiceClient {
   LOCALHOST = 'http://localhost:3000';
 
   findQuizById(quizId) {
-    return fetch(this.LOCALHOST + '/api/quiz/' + quizId)
+    return fetch(this.HEROKU + '/api/quiz/' + quizId)
       .then(response => response.json());
   }
 
   findAllQuizzes() {
-    return fetch(this.LOCALHOST + '/api/quiz')
+    return fetch(this.HEROKU + '/api/quiz')
       .then(response => response.json());
   }
 
   loadSubmissions(quizId) {
-    return fetch(this.LOCALHOST + '/api/quiz/' + quizId + '/submission')
+    return fetch(this.HEROKU + '/api/quiz/' + quizId + '/submission')
       .then(response => response.json());
   }
 
   submitQuiz(quiz) {
-    return fetch(this.LOCALHOST + '/api/quiz/' + quiz._id + '/submission', {
+    return fetch(this.HEROKU + '/api/quiz/' + quiz._id + '/submission', {
       method: 'post',
       body: JSON.stringify(quiz),
       headers: {
@@ -30,13 +30,13 @@ export class QuizServiceClient {
   }
 
   getAllSubmissions(qid) {
-    return fetch(this.LOCALHOST + '/api/quiz/' + qid + '/submission', {
+    return fetch(this.HEROKU + '/api/quiz/' + qid + '/submission', {
       credentials: 'include'
     }).then(response => response.json());
   }
 
   getSubmissionById(qid, submissionId) {
-    return fetch(this.LOCALHOST + '/api/quiz/' + qid + '/submission/' + submissionId, {
+    return fetch(this.HEROKU + '/api/quiz/' + qid + '/submission/' + submissionId, {
       credentials: 'include'
     }).then(response => response.json());
   }
