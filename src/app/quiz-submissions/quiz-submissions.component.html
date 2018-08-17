@@ -1,3 +1,12 @@
-<p>
-  quiz-submissions works!
-</p>
+
+<app-whiteboard-header></app-whiteboard-header>
+<div class="container-fluid">
+  <h2>Submissions</h2>
+  <ul class="list-group">
+    <li *ngFor="let submission of submissions" class="list-group-item">
+      Time: {{submission.submissionTime}}
+      <a class="float-right btn btn-primary"
+         routerLink="/quiz/{{submission.quiz}}/submission/{{submission._id}}">View</a>
+    </li>
+  </ul>
+</div>

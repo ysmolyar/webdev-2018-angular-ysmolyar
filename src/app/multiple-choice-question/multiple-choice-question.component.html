@@ -1,6 +1,7 @@
 <ul class="list-group">
   <li *ngFor="let choice of question.choices"
-      class="list-group-item">
+      class="list-group-item"
+      [ngClass]="{'active': choice.value === selectedChoice}">
     <label>
     <input class="float-left"
            name="multiplechoice"
