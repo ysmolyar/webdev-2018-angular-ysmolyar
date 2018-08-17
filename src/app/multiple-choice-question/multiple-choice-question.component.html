@@ -1,3 +1,11 @@
-<p>
-  multiple-choice-question works!
-</p>
+<ul class="list-group">
+  <li *ngFor="let choice of question.choices"
+      class="list-group-item">
+    <label>
+    <input class="float-left"
+           name="multiplechoice"
+           value={{choice.value}}
+           type="radio"> &nbsp; {{choice.value}}. {{choice.text}}
+    </label>
+  </li>
+</ul>
