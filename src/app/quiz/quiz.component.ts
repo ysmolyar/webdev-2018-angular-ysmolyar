@@ -19,13 +19,15 @@ export class QuizComponent implements OnInit {
   }
 
   quizId = '';
+  quizTitle = '';
   quiz = {};
   submission = {};
   loadQuiz(quizId) {
     this.quizId = quizId;
     this.service
       .findQuizById(quizId)
-      .then(quiz => this.quiz = quiz);
+      .then(quiz => this.quiz = quiz)
+      .then(quiz => this.quizTitle = quiz.title);
   }
 
   submit(quiz) {
@@ -37,7 +39,8 @@ export class QuizComponent implements OnInit {
 
   ngOnInit() {
     this.service.findQuizById(this.quizId)
-      .then(quiz => this.quiz = quiz);
+      .then(quiz => this.quiz = quiz)
+      .then(quiz => this.quizTitle = quiz.title);
   }
 
 }
