@@ -24,9 +24,9 @@ export class SectionListComponent implements OnInit {
   loggedIn;
 
   ngOnInit() {
-    this.userService.isLoggedIn()
+    this.userService.currentUser()
       .then(response => {
-        this.loggedIn = response.status !== 404;
+        this.loggedIn = response.status !== 403;
       })
       .then(() => {
         if (this.loggedIn) {
