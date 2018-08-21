@@ -48,11 +48,16 @@ export class UserServiceClient {
   }
 
 
-  isLoggedIn() {
-    return fetch(this.HEROKU + '/api/login/loggedin', {
+  currentUser() {
+    return fetch(this.HEROKU + '/api/currentUser', {
       credentials: 'include'
-    });
+    }).then((response) => (
+        response.json()),
+      error => {
+        console.log('Error is because there is no current user.');
+      });
   }
+
 
   register(user) {
 

@@ -10,32 +10,36 @@ import {Router} from '@angular/router';
 export class WhiteboardHeaderComponent implements OnInit {
 
   isLoggedIn = false;
-  isAdmin;
+  isAdminUser = false;
+  currentUser = {};
 
   constructor(private userService: UserServiceClient, private router: Router) { }
 
 
   logout() {
     this.userService
-      .logout()
-      .then(() => {
+      .logout().then(() => {
         this.router.navigate(['login']);
       });
   }
 
   ngOnInit() {
-    this.userService.isLoggedIn()
-      .then(response => {
-        console.log('STATUS ' + response.status);
-        this.isLoggedIn = response.status !== 404;
-      });
-
-    this.userService.profile()
-      .then(user => {
-        if (user !== undefined) {
-          this.isAdmin = user.role === 'ADMIN';
+    this.userService.currentUser()
+      .then((user) =>  {
+        this.currentUser = user;
+        if (user.username !== undefined) {
+          this.isLoggedIn = true;
+          if ((user.username === 'admin') && (user.password === 'admin')) {
+            this.isAdminUser = true;
+          } else {
+            this.isAdminUser = false;
+          }
+        } else {
+          this.isLoggedIn = false;
+          this.isAdminUser = false;
         }
       });
+    console.log(this.isLoggedIn);
   }
 
 }
